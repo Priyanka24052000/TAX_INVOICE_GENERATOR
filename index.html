@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVOICE GENERATOR FORM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- <form action="#" name="f1" id="f1"> -->
+    <div class="main">
+        <div id="page1">
+            <div class="form">
+                <h2 id="head">TAX INVOICE</h2>
+                <div class="dotted-line"></div>
+                <div id="first-section">
+                    <div class="part-one">
+                        <label for="name" id="name-label">Invoice No<i class="fa fa-asterisk" aria-hidden="true"
+                                class="asterisk"></i></label>
+                        <input type="text" name="text" id="invi_no">
+                        <label for="date" id="date-label">Invoice Date<i class="fa fa-asterisk" aria-hidden="true"
+                                class="asterisk"></i></label>
+                        <input type="date" name="date" id="invi_dt" value="Select Date">
+                        <div class="due">
+                            <span class="plus"><i class="fa-solid fa-plus"></i></span>
+                            <span class="text-plus">Add Due Date</span>
+                        </div>
+                    </div>
+                    <div class="part-two">
+                        <div class="border-one">
+                            <div class="logo"><i class="fa-solid fa-upload"></i></div>
+                            <div class="logo-text">
+                                <h3>Add Logo</h3>
+                            </div>
+                        </div>
+                        <div class="border-two">
+                            <h4 style="padding-bottom: 12px;">Upload Logo</h4>
+                            <h5 style="font-weight: 100;">240 X 240 pixelsn @ 72 DPI.</h5>
+                            <h5 style="font-weight: 100;">Maximum size of 1MB.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="second-section">
+                    <div class="left">
+                        <h2>Billed By<span id="span-one">(Your Details)</span></h2>
+                        <div class="inputs">
+                            <input type="text" class="input-field" name="text" id="bus_name"
+                                placeholder="Your Business Name (Required)" value=""><br>
+                            <input type="text" class="input-field" name="number" placeholder="+91" id="bus_numb"><br>
+                            <input type="text" class="input-field" placeholder="Your GSTIN(Optional)" id="bus_gstn"><br>
+                            <input type="text" class="input-field" name="address" placeholder="Your Address(Optional)"
+                                id="bus_add"><br>
+                            <input type="text" class="input-field" name="city" placeholder="City/Town(Optional)"
+                                id="bus_cty">
+                            <input type="text" class="input-field" name="zip" placeholder="Postal Code/Zip Code"
+                                id="bus_pin">
+                            <input type="text" class="input-field" name="state" placeholder="state(Optional)"
+                                id="bus_state">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2>Billed To<span id="span-two">(Client Details)</span></h2>
+                        <div class="inputs">
+                            <input type="text" class="input-field" name="text"
+                                placeholder="Client's Business Name (Required)" id="clnt_nm"><br>
+                            <input type="number" class="input-field" name="number" placeholder="+91" id="clnt_numb"><br>
+                            <input type="text" class="input-field" name="text" placeholder="Client's GSTIN(Optional)"
+                                id="clnt_gstin"><br>
+                            <input type="text" class="input-field" name="address"
+                                placeholder="Client's Address(Optional)" id="clnt_add"><br>
+                            <input type="text" class="input-field" name="city" placeholder="City/Town(Optional)"
+                                id="clnt_city">
+                            <input type="number" class="input-field" name="zip" placeholder="Postal Code/Zip Code"
+                                id="clnt_pin">
+                            <input type="text" class="input-field" name="state" placeholder="state(Optional)"
+                                id="clnt_state">
+                        </div>
+                    </div>
+                </div>
+                <div class="third-section">
+                    <table id="invoiceTable">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Item</th>
+                                <th>Quantity</th>
+                                <th>Amount</th>
+                                <th>Rate</th>
+                                <th>CGST</th>
+                                <th>SGST</th>
+                                <th colspan="2">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="width: 40%;" colspan="2">
+                                    <textarea class="input dark" placeholder="Enter item name/description"
+                                        style="height: 50px; width: 95%;"></textarea>
+                                </td>
+                                <td style="width: 10%;"><input type="number" class="input dark right" id="prod_qlt"
+                                        placeholder="0" value="" style="width: 100%">
+                                </td>
+                                <td style="width: 10%;"><input type="number" class="input dark right" id="prod_ant"
+                                        placeholder="0" value="" style="width: 100%">
+                                </td>
+                                <td style="width: 10%;"><input type="number" class="input dark right" id="prod_rte"
+                                        placeholder="0" value="" style="width: 100%">
+                                </td>
+                                <td style="width: 10%;"><select id="prod_sgst" onchange="change_select()">
+                                    <option value="0%">0%</option>
+                                    <option value="5%">5%</option>
+                                    <option value="10%">10%</option>
+                                    <option value="12%">12%</option>
+                                    <option value="15%">15%</option>
+                                    <option value="17%">17%</option>
+                                </select>
+                                </td>
+                                <td style="width: 10%;"> <select id="prod_cgst" onchange="change_select()">
+                                    <option value="0%">0%</option>
+                                    <option value="5%">5%</option>
+                                    <option value="10%">10%</option>
+                                    <option value="12%">12%</option>
+                                    <option value="15%">15%</option>
+                                    <option value="17%">17%</option>
+                                </select>
+                                </td>
+
+                                <td style="font-family: Arial, Helvetica, sans-serif; width: 10%;"><button
+                                        class="deleteBtn"
+                                        style="padding: 10px; background: transparent; border: 0px;">X</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <button style="width: 100%;" id="addRowBtn">
+                        <i class="fa-solid fa-plus"></i>Add new item
+                    </button>
+                </div>
+                <div class="forth-section">
+                    <div class="amount-section">
+                        <div class="amout">
+                            <span class="amt-one">Amount</span>
+                        </div>
+                        <div class="amout">
+                            <span class="amt-one">SGST</span>
+                            <span class="amt-two" style="font-weight: bold;" id="tot_sgst"></span>
+                        </div>
+                        <div class="amout">
+                            <span class="amt-one">CGST</span>
+                            <span class="amt-two" style="font-weight: bold;" id="tot_cgst"></span>
+                        </div>
+                        <div class="additional">
+                            <span><i class="fa-solid fa-tags"></i></span>
+                            <span>Add Discount/Additional Charges</span>
+                        </div>
+                        <div class="amout total">
+                            <span>Total(INR)</span>
+                            <span id="total_amount"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fifth-section">
+                    <div class="terms">
+                        <h3>Terms and Condition</h3>
+                        <p><input type="checkbox">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Asperiores,
+                            error ex nesciunt delectus neque quasi quis officiis cupiditate distinctio, enim, est
+                            repellendus ipsum.</p>
+                    </div>
+                </div>
+
+
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <button onclick="printInvoice()" style=" position: absolute;">Print
+                            Invoice</button>
+
+                        <br><br>
+
+                        <span class="close">&times;</span>
+                        <h2>TAX INVOICE</h2>
+                        <table border="">
+                            <tr>
+                                <td>Invoice No:- <br>
+                                    Invoice Date:-
+                                </td>
+                                <td colspan="7">
+                                    <label name="inv_no" id="inv_no"></label><br>
+                                    <label name="inv_dt" id="inv_dt"></label><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="8">
+                                    <h2>Billed By<span id="span-one">(Your Details)</span></h2>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Your Business Name:- <br>Number:-<br>Your GSTIN:-<br>Your
+                                    Address:-<br>City/Town:-<br>Postal Code/Zip Code:-<br>state:-
+                                </td>
+                                <td colspan="7">
+                                    <label name="ur_nm" id="ur_nm"></label><br>
+                                    <label name="ur_numb" id="ur_numb"></label><br>
+                                    <label name="ur_gst" id="ur_gst"></label><br>
+                                    <label name="ur_add" id="ur_add"></label><br>
+                                    <label name="ur_city" id="ur_city"></label><br>
+                                    <label name="ur_code" id="ur_code"></label><br>
+                                    <label name="ur_state" id="ur_state"></label><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="8">
+                                    <h2>Billed To<span id="span-two">(Client Details)</span></h2>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Client's Business Name:- <br>Number:-<br>Client's GSTIN:-<br>Client's
+                                    Address:-<br>City/Town:-<br>Postal Code/Zip Code:-<br>state:-
+                                </td>
+                                <td colspan="7" height="150">
+                                    <label name="clt_nm" id="clt_nm">1</label><br>
+                                    <label name="clt_numb" id="clt_nm">2</label><br>
+                                    <label name="clt_gstin" id="clt_gstin">3</label><br>
+                                    <label name="clt_add" id="clt_add">4</label><br>
+                                    <label name="clt_cty" id="clt_cty">5</label><br>
+                                    <label name="clt_code" id="clt_code">6</label><br>
+                                    <label name="clt_state" id="clt_state">7</label><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th>Rate</th>
+                                <th>CGST</th>
+                                <th>SGST</th>
+                                <th>Amount</th>
+                            </tr>
+                            <tr>
+                                <td><label id="itm_nm"></label></td>
+                                <td><label id="itm_qty"></label></td>
+                                <td><label id="itm_rate"></label></td>
+                                <td><label id="itm_cgst"></label></td>
+                                <td><label id="itm_sgst"></label></td>
+                                <td><label id="itm_amu"></label></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- </form> -->
+                <button id="save_data" type="submit">Save</button>
+                <!-- <button id="openModal">Open Modal</button> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
