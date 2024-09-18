@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#page1 {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #edeeee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    height: 245vh;
+    width: 75vw;
+    background-color: #f7ffff;
+    border-radius: 20px;
+}
+
+#head {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 1em;
+}
+
+.dotted-line {
+    margin: 5px 480px;
+    border-bottom: 2px dotted black;
+}
+
+#first-section {
+    display: flex;
+    gap: 74px;
+    padding: 1rem;
+    /* border: 2px solid blue; */
+}
+
+.part-one {
+    height: 30vh;
+    width: 45%;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.part-two {
+    height: 30vh;
+    width: 45%;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.part-one #name-label {
+    padding: 1rem 0.8rem 1.2rem 1.2rem;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.part-one #invi_no,
+#invi_dt {
+    width: 18vw;
+    border: none;
+    border-bottom: 2px solid black;
+    height: 5vh;
+    margin-left: 10px;
+    background-color: #f7ffff;
+}
+
+.part-one #invi_no,
+#invi_dt:focus {
+    outline: none;
+}
+
+.part-one #date-label {
+    padding: 1rem 0.8rem 1.2rem 1.2rem;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.part-one .fa-asterisk {
+    font-size: 9px;
+    color: red;
+    position: absolute;
+}
+
+.part-two .border-one {
+    height: 20vh;
+    width: 10vw;
+    border: 2px dotted black;
+    border-radius: 20%;
+    margin-top: 1.3rem;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.part-two .border-two {
+    height: 15vh;
+    width: 10vw;
+    /* border: 2px dotted black; */
+    text-align: left;
+    padding: 9px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1.9rem;
+}
+
+.part-two .border-one .fa-solid {
+    padding: 1.3rem;
+    font-size: 48px;
+    color: rgb(0, 81, 255);
+}
+
+.part-one .due {
+    padding: 1rem 0.8rem 1.2rem 1.2rem;
+    display: flex;
+    gap: 10px;
+}
+
+.part-one .due .fa-solid {
+    font-size: 14px;
+    color: rgb(53, 53, 167);
+    border: 2px dotted rgb(41, 41, 184);
+    border-radius: 5px;
+    padding: 0.3rem;
+}
+
+.part-one .due .text-plus {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 4px;
+}
+
+.second-section {
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    padding: 2rem;
+}
+
+.second-section .left {
+    height: 65vh;
+    width: 53%;
+    background-color: #d8e4f8;
+    ;
+    padding: 1.9rem;
+    border-radius: 5%;
+}
+
+.second-section .left h2 {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.second-section .left #span-one {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+.second-section .right {
+    height: 65vh;
+    width: 50%;
+    background-color: #d8e4f8;
+    padding: 1.9rem;
+    border-radius: 5%;
+}
+
+.second-section .right h2 {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.second-section .right #span-two {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+.second-section .inputs {
+    padding: 1.3rem 0.8rem 1.2rem 0.2rem;
+}
+
+.second-section input {
+    width: 100%;
+    margin: 10px;
+    height: 4vh;
+}
+
+.second-section .left .inputs .input-field,
+.second-section .right .inputs .input-field {
+    border: none;
+    border-bottom: 2px solid black;
+    margin-left: 10px;
+    height: 4.3vh;
+    background-color: #d8e4f8;
+}
+
+.second-section .left .inputs .input-field,
+.second-section .right .inputs .input-field:focus {
+    outline: none;
+}
+
+.third-section {
+    margin: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    /* background-color: #f2f2f2; */
+    background-color: rgb(63, 13, 110);
+    color: white;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.item {
+    font-weight: bold;
+}
+
+.description {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.third-section #addRowBtn {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    text-align: center;
+    border: 2px dotted blueviolet;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.forth-section {
+    height: 50vh;
+    width: 100%;
+    /* border: 2px solid black; */
+}
+
+.amount-section {
+    height: 49vh;
+    width: 57vh;
+    /* border: 2px solid black; */
+    float: right;
+    margin-right: 1.9rem;
+    padding: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.forth-section .amount-section .amout {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forth-section .amount-section .additional {
+    padding-top: 1rem;
+}
+
+.forth-section .amount-section .additional .fa-solid {
+    color: rgb(71, 34, 105);
+}
+
+.forth-section .amount-section .total {
+    padding-top: 1rem;
+    font-size: 35px;
+    position: relative;
+}
+
+.forth-section .amount-section .total::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    /* Line thickness */
+    background-color: blueviolet;
+    /* Line color */
+}
+
+.forth-section .amount-section .total::before {
+    top: 0;
+}
+
+.fifth-section {
+    padding: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fifth-section .terms {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fifth-section .terms input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#save_data {
+    float: right;
+    margin: 1.9rem 4.3rem;
+    padding: 0.4rem 1.9rem;
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(59, 14, 102);
+    color: white;
+}
+
+.modal {
+    display: none; 
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+ /* Close button */
+ .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
